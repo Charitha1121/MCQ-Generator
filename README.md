@@ -1,16 +1,72 @@
-# React + Vite
+# 📚 MCQ Generator AI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An AI-powered web application that converts PDF documents into Multiple Choice Questions (MCQs) using n8n automation, Supabase storage, and a React frontend.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Features
 
-## React Compiler
+- Upload PDF files
+- AI-generated MCQs from content
+- Options (A, B, C, D)
+- Correct answers with explanations
+- Supabase file storage
+- n8n workflow automation
+- Download MCQs as DOCX
+- Clean UI with live status updates
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React.js (Frontend)
+- n8n (Automation workflow)
+- Supabase (Storage)
+- docx + file-saver (Export)
+- lucide-react (Icons)
+
+---
+
+## 📂 Project Structure
+
+mcq-generator/
+│── src/
+│   ├── App.jsx
+│   ├── components/
+│   ├── styles/
+│
+│── public/
+│── .env
+│── package.json
+│── README.md
+
+---
+
+## ⚙️ Environment Variables
+
+Create a `.env` file:
+
+REACT_APP_SUPABASE_URL=your_supabase_url  
+REACT_APP_SUPABASE_ANON_KEY=your_supabase_key  
+REACT_APP_N8N_WEBHOOK_URL=your_n8n_webhook  
+
+---
+
+## 🔥 How It Works
+
+1. Upload PDF
+2. File stored in Supabase
+3. Public URL sent to n8n webhook
+4. n8n extracts text + sends to AI
+5. AI generates MCQs in JSON format
+6. React parses and displays MCQs
+7. Download as DOCX
+
+---
+
+## ▶️ Setup
+
+### 1. Clone repo
+```bash
+git clone https://github.com/your-username/mcq-generator.git
+cd mcq-generator
